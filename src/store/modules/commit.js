@@ -14,7 +14,7 @@ const actions = {
     fetchAllCommits({commit},repo){
         return new Promise((resolve,reject)=>{
             commit('request')
-            axios.get(`/repos/Okeibunor/${repo}/stats/commit_activity`)
+            axios.get(`/api/repos/Okeibunor/${repo}/stats/commit_activity`)
             .then(res => {
                 commit('SET_COMMITS', res.data)
                 commit('request_success')

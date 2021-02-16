@@ -15,7 +15,7 @@ const actions = {
     fetchAllRepos({commit}){
         return new Promise((resolve,reject)=>{
             commit('request')
-            axios.get('/users/Okeibunor/repos')
+            axios.get('/api/users/Okeibunor/repos')
             .then(res => {
                 commit('SET_REPOS', res.data)
                 commit('request_success')
@@ -30,7 +30,7 @@ const actions = {
     fetchSingleUser({commit}){
       return new Promise((resolve,reject)=>{
         commit('request')
-        axios.get('/users/Okeibunor')
+        axios.get('/api/users/Okeibunor')
         .then(res=>{
           commit('SET_USER',res.data)
           commit('request_success')
