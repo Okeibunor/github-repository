@@ -57,7 +57,7 @@ export default {
     Footer
   },
   computed:{
-    ...mapGetters(["getAllRepos","getUser"])
+    ...mapGetters(["getAllRepos","getUser","getDarkMode"])
   },
   beforeMount() {
     this.$store.dispatch("fetchAllRepos");
@@ -67,6 +67,13 @@ export default {
 </script>
 
 <style scoped>
+.light-background{
+
+}
+.dark-background input[type="text"]{
+  background-color: transparent;
+}
+
 .container{
   display: flex;
   padding: 10px 8vw;
@@ -94,11 +101,12 @@ export default {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #e1e4e8;
+  border: .5px solid #e1e4e8;
   border-radius: 6px;
   outline: none;
   box-shadow: inset 0 1px 0 rgba(225,228,232,.2);
 }
+
 .searchForm .btn{
   color: #24292e;
   background-color: #fff;
@@ -121,5 +129,10 @@ export default {
 .btn-green svg{
   vertical-align: bottom;
   fill: white;
+}
+.dark-background .btn{
+  background-color: #21262d;
+  color: #c1d9d9 ;
+  border-color: #21262d;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="{'light-background':!getDarkMode,'dark-background':getDarkMode}">
     <div class="card-text">
       <a :href="htmlUrl">{{title}}</a>
       <p>{{body?body:'No description available'}}</p>
@@ -64,7 +64,7 @@ export default {
     LineChart
   },
   computed:{
-    // ...mapGetters(['getAllCommits'])
+    ...mapGetters(['getDarkMode'])
   },
   mounted(){
     // this.$store.dispatch("fetchAllCommits");
@@ -76,8 +76,11 @@ export default {
   .card{
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #eaecef;
+    border-top: 0.5px solid #eaecef;
     padding: 24px 0px;
+  }
+  .card.dark-background{
+    border-top: .5px solid rgba(255, 255, 255, 0.24);
   }
   .card .card-text a{
     color: #0366d6;

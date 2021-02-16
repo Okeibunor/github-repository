@@ -1,5 +1,12 @@
 module.exports = {
   devServer: {
-    proxy: 'https://api.github.com'
+    proxy: {
+      "^/api": {
+        target: "https://api.github.com",
+        changeOrigin: true,
+        logLevel: "debug",
+        pathRewrite: { "^/api": "/" }
+      }
+    }
   }
 }
