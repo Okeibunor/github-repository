@@ -33,7 +33,7 @@
           </li>
         </ul>
     </nav>
-    <nav class="fixed bottom-nav navbar align-center light" :class="{'light-background':!getDarkMode,'dark-background':getDarkMode}">
+    <nav class="fixed bottom-nav navbar light" :class="{'light-background':!getDarkMode,'dark-background':getDarkMode}">
       <ul>
         <li>
           <a href="#"><svg class="octicon octicon-book UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"></path></svg> <span>Overview</span></a>
@@ -47,18 +47,18 @@
         <li>
           <a href="#"><svg class="octicon octicon-package UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z"></path></svg><span> Packages</span></a>
         </li>
-        <div @click="toggleDarkMode" :class="{'light-toggle':!getDarkMode,'dark-toggle':getDarkMode}" class="btn-toggle">
-          <div :class="{'toggle-left':!getDarkMode,'toggle-right':getDarkMode}">
-            <svg v-if="!getDarkMode" style="fill:yellow; margin: 7px 0 0 7px;" aria-hidden="true" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z"></path>
-            </svg>
-            <svg v-if="getDarkMode" style="fill:white; margin: 7px 0 0 7px;" aria-hidden="true" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z"></path>
-            </svg>
-          </div>
-        </div>
-      </ul>
 
+      </ul>
+      <div @click="toggleDarkMode" :class="{'light-toggle':!getDarkMode,'dark-toggle':getDarkMode}" class="btn-toggle">
+        <div class="btn-switch" :class="{'toggle-left':!getDarkMode,'toggle-right':getDarkMode}">
+          <svg v-if="!getDarkMode" style="fill:yellow;" aria-hidden="true" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z"></path>
+          </svg>
+          <svg v-if="getDarkMode" style="fill:white;" aria-hidden="true" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z"></path>
+          </svg>
+        </div>
+      </div>
     </nav>
   </Header>
 </template>
@@ -96,28 +96,31 @@ import { mapGetters } from 'vuex';
   .btn-toggle{
     display: flex;
     vertical-align: middle;
-    justify-content: flex-start;
-    width: 100px;
-    padding: 0;
+    justify-content: center;
+    width: 70px;
+    height: 35px;
   }
   .btn-switch{
-    width: 70px;
-    transition: all 1s ease-in-out;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all .2s linear;
+  }
+
+  .light-toggle{
+    background: white;
+    border: 1px solid grey;
+    border-radius: 20px;
+  }
+  .dark-toggle{
+    background: rgb(204, 74, 204);
+    border: 1px solid rgb(204,74,204);
+    border-radius: 20px;
   }
   .light-toggle svg{
     background: black;
     padding: 10px;
     border-radius: 50%;
-  }
-  .light-toggle{
-    background: white;
-    border: 1px solid grey;
-    border-radius: 30px;
-  }
-  .dark-toggle{
-    background: rgb(204, 74, 204);
-    border: 1px solid rgb(204,74,204);
-    border-radius: 30px;
   }
   .dark-toggle svg {
     border-radius: 50%;
@@ -133,15 +136,14 @@ import { mapGetters } from 'vuex';
 
   }
   .toggle-right{
-    transform: translateX(100%);
+    transform: translateX(50%);
+    overflow:hidden;
   }
   .navbar{
     display: flex;
     justify-content: space-between;
   }
-  .navbar.align-center{
-    justify-content: center;
-  }
+
   .navbar ul{
     display: flex;
     justify-content: space-evenly;
@@ -165,12 +167,17 @@ import { mapGetters } from 'vuex';
   .navbar.light{
     background-color: #ffffff;
     border-bottom: .5px solid #eaecef;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
   }
   .navbar.light.dark-background{
     border-bottom: .5px solid rgba(255, 255, 255, 0.24);
   }
   .navbar.light ul{
     margin: 5vh auto 0px;
+  }
+  .navbar.light div{
+    margin: auto;
   }
   .navbar.light a{
     color:#24292e;
