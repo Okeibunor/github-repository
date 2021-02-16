@@ -5,8 +5,8 @@ import store from './store'
 import axios from 'axios'
 
 
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'https://api.github.com';
+// axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = 'https://api.github.com';
 axios.defaults.auth
 Vue.use(require('vue-moment'));
 Vue.config.productionTip = false

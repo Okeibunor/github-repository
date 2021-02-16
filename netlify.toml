@@ -1,0 +1,6 @@
+[[redirects]]
+    from="https://happy-gates-f79a46.netlify.app/*"
+    to="https://api.github.com"
+    status=200
+    force=true
+    headers = {X-From = "Netlify"}
