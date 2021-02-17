@@ -30,13 +30,13 @@
                 <svg class="octicon octicon-plus" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z"></path></svg>
                 <span style="color:white" class="dropdown-caret"></span>
               </summary>
-              <ol id=“dropdown-content”>
+              <div style="position:absolute;color:black;background-color:black;z-index:2" class=“dropdown-content”>
                 <li><a href="#">New repository</a></li>
                 <li><a href="#">Import repository</a></li>
                 <li><a href="#">New gist</a></li>
                 <li><a href="#">New organization</a></li>
                 <li><a href="#">New project</a></li>
-              </ol>
+              </div>
             </details>
 
           </li>
@@ -220,6 +220,7 @@ import { mapGetters } from 'vuex';
     list-style-type: none;
     margin: auto 6px;
   }
+
   a{
     text-decoration: none;
   }
@@ -287,31 +288,8 @@ import { mapGetters } from 'vuex';
     font-size: 12px;
     border-radius: 10px;
   }
-  .icon-chevron-down-mktg{
-
-  }
-   .dropdown .btn{
-    position:relative;
-    display: inline-block;
-  }
-  ol.dropdown-content{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 100;
-    width: 160px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-top: 2px;
-  }
-  .dropdown .dropdown-content li a{
-    display: block;
-    padding: 4px 8px 4px 16px;
-    overflow: hidden;
-    color: blue;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 200px;
+  div.dropdown-content{
+    /* position: absolute !important; */
   }
   @media only screen and (max-width: 600px) {
     .navbar.light{

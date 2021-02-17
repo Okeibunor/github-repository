@@ -67,11 +67,10 @@ export default {
 </script>
 
 <style scoped>
-.light-background{
 
-}
 .dark-background input[type="text"]{
   background-color: transparent;
+  border: 1px solid #30363d;
 }
 
 .container{
@@ -89,7 +88,7 @@ export default {
 .searchForm{
   margin: 20px auto;
   display: grid;
-  grid-template-columns: 5fr 1.5fr 2fr 1fr;
+  grid-template-columns: 6fr 1.5fr 2fr 1fr;
   grid-column-gap: 10px;
 }
 .searchForm .form-control{
@@ -116,6 +115,9 @@ export default {
   transition: .2s cubic-bezier(.3,0,.5,1);
   transition-property: color,background-color,border-color;
 }
+.dark-background .searchForm btn:hover{
+  background-color: #30363d;
+}
 .searchForm .btn:active{
   outline: none !important;
 }
@@ -133,7 +135,8 @@ export default {
 .dark-background .btn{
   background-color: #21262d;
   color: #c1d9d9 ;
-  border-color: #21262d;
+  border-color: #30363d;
+  box-shadow: none;
 }
   @media only screen and (max-width: 600px) {
     .container{
