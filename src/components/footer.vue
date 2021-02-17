@@ -61,4 +61,9 @@
   #copy a{
     color: grey;
   }
+  @media only screen and (max-width: 600px) {
+    .footer {
+      display: unset;
+    }
+  }
 </style>

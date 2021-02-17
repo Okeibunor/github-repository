@@ -109,7 +109,7 @@ import { mapGetters } from 'vuex';
 
   .light-toggle{
     background: white;
-    border: 1px solid grey;
+    border: 2px solid rgba(128, 128, 128, 0.342);
     border-radius: 20px;
   }
   .dark-toggle{
@@ -265,6 +265,21 @@ import { mapGetters } from 'vuex';
   }
   .icon-chevron-down-mktg{
 
+  }
+
+  @media only screen and (max-width: 600px) {
+    .navbar.light{
+      overflow:scroll;
+    }
+    .navbar.dark{
+      overflow:scroll;
+    }
+    .navbar.dark ul:nth-child(2){
+      display: none;
+    }
+    .navbar.dark ul li:nth-child(n+2){
+      display: none;
+    }
   }
 </style>
 

@@ -2,8 +2,14 @@
   <div class="v-card">
     <img class="avatar" :src=avatar_url alt="avatar">
     <div class="v-card-group">
-      <div class="name">{{name}}</div>
-      <div class="login">{{login}}</div>
+      <div class="profile_sum">
+        <img class="avatar-sm" :src=avatar_url alt="avatar">
+        <div>
+          <div class="name">{{name}}</div>
+          <div class="login">{{login}}</div>
+        </div>
+      </div>
+
 
       <div class="bio">{{bio}}</div>
       <div class="btn-group">
@@ -38,11 +44,13 @@
   z-index: -1;
 }
 .avatar{
-  width: 270px;
-  height: 270px;
+  width: 100%;
   object-fit: contain;
   border-radius: 50%;
   transform: translateY(-10%);
+  }
+  .avatar-sm{
+    display: none;
   }
 .btn-group{
   display: grid;
@@ -98,5 +106,22 @@ li span:last-child::after{
 h2{
    border-top:1px solid #eaecef;
    padding-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .avatar{
+    display: none;
+  }
+  .avatar-sm{
+    display: unset;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .profile_sum{
+    display: flex;
+  }
 }
 </style>

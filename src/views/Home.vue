@@ -135,4 +135,19 @@ export default {
   color: #c1d9d9 ;
   border-color: #21262d;
 }
+  @media only screen and (max-width: 600px) {
+    .container{
+      flex-direction: column;
+    }
+    .profile{
+      width: unset;
+      padding-right: unset;
+    }
+    .cards{
+      width: unset;
+    }
+    .searchForm .form-control{
+      display: none;
+    }
+  }
 </style>

@@ -6,7 +6,7 @@
       <div class="f6">Updated {{ update | moment("from", "now") }}</div>
     </div>
     <div class="card-graph">
-      <line-chart :chartdata="chartData" :options="chartOptions" :height="20" :width="200" />
+      <line-chart :chartdata="chartData" :options="chartOptions" :height="20" :width="150" />
     </div>
   </div>
 </template>
@@ -75,9 +75,11 @@ export default {
 <style scoped>
   .card{
     display: flex;
-    justify-content: space-between;
     border-top: 0.5px solid #eaecef;
     padding: 24px 0px;
+  }
+  .card .card-text{
+    width: 50%;
   }
   .card.dark-background{
     border-top: .5px solid rgba(255, 255, 255, 0.24);
@@ -98,5 +100,10 @@ export default {
   }
   svg{
     vertical-align: middle;
+  }
+  @media only screen and (max-width: 600px) {
+    .chart-text{
+      width: 60% !important;
+    }
   }
 </style>
