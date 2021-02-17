@@ -20,12 +20,25 @@
         </ul>
         <ul class="nav-right">
           <li>
-
-            <svg class="octicon octicon-bell" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z"></path><path fill-rule="evenodd" d="M8 1.5A3.5 3.5 0 004.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.018.018 0 00-.003.01l.001.006c0 .002.002.004.004.006a.017.017 0 00.006.004l.007.001h10.964l.007-.001a.016.016 0 00.006-.004.016.016 0 00.004-.006l.001-.007a.017.017 0 00-.003-.01l-1.703-2.554a1.75 1.75 0 01-.294-.97V5A3.5 3.5 0 008 1.5zM3 5a5 5 0 0110 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.518 1.518 0 0113.482 13H2.518a1.518 1.518 0 01-1.263-2.36l1.703-2.554A.25.25 0 003 7.947V5z"></path></svg>
+            <a href="https://github.com/notifications">
+              <svg class="octicon octicon-bell" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z"></path><path fill-rule="evenodd" d="M8 1.5A3.5 3.5 0 004.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.018.018 0 00-.003.01l.001.006c0 .002.002.004.004.006a.017.017 0 00.006.004l.007.001h10.964l.007-.001a.016.016 0 00.006-.004.016.016 0 00.004-.006l.001-.007a.017.017 0 00-.003-.01l-1.703-2.554a1.75 1.75 0 01-.294-.97V5A3.5 3.5 0 008 1.5zM3 5a5 5 0 0110 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.518 1.518 0 0113.482 13H2.518a1.518 1.518 0 01-1.263-2.36l1.703-2.554A.25.25 0 003 7.947V5z"></path></svg>
+            </a>
           </li>
           <li>
-            <svg class="octicon octicon-plus" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z"></path></svg>
-            <span style="color:white" class="dropdown-caret"></span>
+            <details class=“dropdown”>
+              <summary class=“btn” aria-haspopup=“menu”>
+                <svg class="octicon octicon-plus" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z"></path></svg>
+                <span style="color:white" class="dropdown-caret"></span>
+              </summary>
+              <ol id=“dropdown-content”>
+                <li><a href="#">New repository</a></li>
+                <li><a href="#">Import repository</a></li>
+                <li><a href="#">New gist</a></li>
+                <li><a href="#">New organization</a></li>
+                <li><a href="#">New project</a></li>
+              </ol>
+            </details>
+
           </li>
           <li>
             <img src="https://avatars.githubusercontent.com/u/32412300?s=60&amp;v=4" alt="@Okeibunor" size="20" class="avatar avatar-user avatar--small " height="20" width="20">
@@ -93,6 +106,7 @@ import { mapGetters } from 'vuex';
 </script>
 
 <style lang="css" scoped>
+
   .btn-toggle{
     display: flex;
     vertical-align: middle;
@@ -228,12 +242,22 @@ import { mapGetters } from 'vuex';
   .search input[type=text]{
     background-color:#24292e;
     padding: 5px 10px;
-    border:1px solid rgba(128, 128, 128, 0.404) !important;
+    border:1px solid rgba(128, 128, 128, 0.404);
     width: 17vw;
     color: white;
     font-size: 16px;
     outline: white;
     border-radius: 6px;
+    transition: width .4s ease-in;
+  }
+  .search input[type=text]:focus{
+    width: 28vw;
+    border: .5px solid rgb(12, 121, 211);
+    border-bottom: .5px solid rgba(128, 128, 128, 0.555);
+    outline: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
   }
   .search input[type=submit]{
     background-color:#24292e;
@@ -266,7 +290,29 @@ import { mapGetters } from 'vuex';
   .icon-chevron-down-mktg{
 
   }
-
+   .dropdown .btn{
+    position:relative;
+    display: inline-block;
+  }
+  ol.dropdown-content{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    width: 160px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 2px;
+  }
+  .dropdown .dropdown-content li a{
+    display: block;
+    padding: 4px 8px 4px 16px;
+    overflow: hidden;
+    color: blue;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+  }
   @media only screen and (max-width: 600px) {
     .navbar.light{
       overflow:scroll;
