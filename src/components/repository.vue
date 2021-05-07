@@ -96,7 +96,7 @@ export default {
   computed: {
     ...mapGetters(["getDarkMode"]),
   },
-  mounted() {
+  beforeMount() {
     this.$store.dispatch("fetchAllCommits", this.title);
   },
 };

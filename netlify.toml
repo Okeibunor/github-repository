@@ -1,6 +1,11 @@
 [[redirects]]
-    from="https://happy-gates-f79a46.netlify.app/api/*"
-    to="https://api.github.com/:splat"
-    status=200
-    force=true
-    headers = {X-From = "Netlify"}
+  from = "/api/*"
+  to = "https://api.github.com/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
